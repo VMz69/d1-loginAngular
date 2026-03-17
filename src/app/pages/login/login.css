@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f5f5f5;
+}
+
+mat-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:
+    20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+}
+
+.container {
+  align-items: center;
+  text-align: center;
+}
+
+/* From Uiverse.io by talhabangyal */ 
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background: #504eff;
+  border: 1px solid transparent;
+  /* display: flex; */
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #504eff;
+}
+
+.text {
+  color: #fff;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+

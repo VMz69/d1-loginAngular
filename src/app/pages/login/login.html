@@ -1,23 +1,27 @@
 <mat-card>
 
-    <h2>Login</h2>
+    <div class= "container">
 
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <h2>Login</h2>
 
-        <mat-form-field appearance="outline">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email">
-        </mat-form-field>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" formControlName="password">
-        </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email">
+            </mat-form-field>
 
-        <button mat-raised-button color="primary" type="submit">
-            Login
-        </button>
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password">
+            </mat-form-field>
+            <br>
+            <button class="button" type="submit">
+                Login
+            </button>
 
-    </form>
+        </form>
+
+    </div>
 
 </mat-card>

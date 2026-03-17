@@ -9,20 +9,21 @@ import { CanActivateFn, Router } from '@angular/router';
 import { inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
-export const authGuard: CanActivateFn = (route, state) => {
+export const authGuard: CanActivateFn = () => {
 
   const router = inject(Router);
   const platformId = inject(PLATFORM_ID);
 
-  //verificando si estamos en el navegador para usar el localstorage dado que en SSR no se pueden usar estos objetos nativos del navegador
-  if (isPlatformBrowser(platformId)) {
+  // ✅ IMPORTANTE: permitir SSR
+  if (!isPlatformBrowser(platformId)) {
+    return true;
+  }
 
-    const token = localStorage.getItem("token");
+  // Ya en browser validamos
+  const token = localStorage.getItem("token");
 
-    if (token) {
-      return true;
-    }
-
+  if (token) {
+    return true;
   }
 
   router.navigate(['/login']);

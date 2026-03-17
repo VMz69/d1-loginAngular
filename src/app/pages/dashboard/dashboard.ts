@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Auth } from '../../services/auth';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,5 +9,20 @@ import { Component } from '@angular/core';
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
+  constructor(
+    private auth: Auth,
+    private router: Router,
+  ) {}
 
+  //cargar datos del payload
+  user: any;
+  ngOnInit() {
+    this.user = this.auth.getPayload();
+  }
+
+  logout() {
+    this.auth.logout();
+
+    this.router.navigate(['/login']);
+  }
 }

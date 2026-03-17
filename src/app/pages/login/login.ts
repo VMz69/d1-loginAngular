@@ -18,6 +18,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
   ],
   templateUrl: './login.html',
+  styleUrl: './login.css'
 })
 export class Login {
   loginForm!: FormGroup;
