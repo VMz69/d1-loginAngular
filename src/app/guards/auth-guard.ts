@@ -14,7 +14,7 @@ export const authGuard: CanActivateFn = () => {
   const router = inject(Router);
   const platformId = inject(PLATFORM_ID);
 
-  // ✅ IMPORTANTE: permitir SSR
+  // IMPORTANTE: permitir SSR
   if (!isPlatformBrowser(platformId)) {
     return true;
   }
